@@ -21,19 +21,40 @@ const convertToWord = (letter) => {
 }
 
 const winGame = (userChoice, compChoice) => {
+    const userSelectedEl = document.getElementById(userChoice)
+    const compSelectedEl = document.getElementById(compChoice)
     userScore += 1
     userScoreEl.innerHTML = userScore
     resultEl.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(compChoice)}. You Win!`
+    userSelectedEl.classList.add('green-glow')
+    compSelectedEl.classList.add('red-glow')
+    setTimeout(() => {
+        userSelectedEl.classList.remove('green-glow')
+        compSelectedEl.classList.remove('red-glow')
+    }, 300)
 }
 
 const loseGame = (userChoice, compChoice) => {
+    const userSelectedEl = document.getElementById(userChoice)
+    const compSelectedEl = document.getElementById(compChoice)
     compScore += 1
     compScoreEl.innerHTML = compScore
     resultEl.innerHTML = `${convertToWord(compChoice)} beats ${convertToWord(userChoice)}. You Lose!`
+    userSelectedEl.classList.add('red-glow')
+    compSelectedEl.classList.add('green-glow')
+    setTimeout(() => {
+        userSelectedEl.classList.remove('red-glow')
+        compSelectedEl.classList.remove('green-glow')
+    }, 300)
 }
 
 const drawGame = (userChoice) => {
+    const userSelectedEl = document.getElementById(userChoice)
     resultEl.innerHTML = `You both picked ${convertToWord(userChoice)}. It's a tie!`
+    userSelectedEl.classList.add('grey-glow')
+    setTimeout(() => {
+        userSelectedEl.classList.remove('grey-glow')
+    }, 300);
 }
 
 const playGame = (userChoice) => {
@@ -55,7 +76,6 @@ const playGame = (userChoice) => {
             drawGame(userChoice)
             break;
     }
-
 }
 
 

@@ -81,6 +81,21 @@ header h1 {
     cursor: pointer;
 }
 
+.green-glow {
+    border: 4px solid #87ff65;
+    box-shadow: 0 0 10px #2ccc00;
+}
+
+.red-glow {
+    border: 4px solid #ff2e00;
+    box-shadow: 0 0 10px #cc2500;
+}
+
+.grey-glow {
+    border: 4px solid #464647;
+    box-shadow: 0 0 10px #25292b;
+}
+
 #action-message {
     margin-top: 20px;
     text-align: center;
