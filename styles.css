@@ -44,12 +44,14 @@ header h1 {
     position: absolute;
     top: 40px;
     left: -24px;
+    transition: all 0.3s ease;
 }
 
 #comp-label {
     position: absolute;
     top: 40px;
     right: -24px;
+    transition: all 0.3s ease;
 }
 
 .result {

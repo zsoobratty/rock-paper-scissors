@@ -7,6 +7,9 @@ const resultEl = document.querySelector('.result > p')
 const rockEl = document.getElementById('r')
 const paperEl = document.getElementById('p')
 const scissorsEl = document.getElementById('s')
+const userLabel = document.getElementById('user-label')
+const compLabel = document.getElementById('comp-label')
+
 
 const handleCompChoice = () => {
     const choices = ['r', 'p', 's']
@@ -27,8 +30,12 @@ const winGame = (userChoice, compChoice) => {
     userScoreEl.innerHTML = userScore
     resultEl.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(compChoice)}. You Win!`
     userSelectedEl.classList.add('green-glow')
-    compSelectedEl.classList.add('red-glow')
+    compSelectedEl.classList.add('red-glow')   
+    userLabel.style.padding = '4px 20px'
+    userLabel.style.backgroundColor = '#87ff65'
     setTimeout(() => {
+        userLabel.style.padding = '2px 10px'
+        userLabel.style.backgroundColor = '#e71d36'
         userSelectedEl.classList.remove('green-glow')
         compSelectedEl.classList.remove('red-glow')
     }, 300)
@@ -42,7 +49,11 @@ const loseGame = (userChoice, compChoice) => {
     resultEl.innerHTML = `${convertToWord(compChoice)} beats ${convertToWord(userChoice)}. You Lose!`
     userSelectedEl.classList.add('red-glow')
     compSelectedEl.classList.add('green-glow')
+    compLabel.style.padding = '4px 20px'
+    compLabel.style.backgroundColor = '#87ff65'
     setTimeout(() => {
+        compLabel.style.padding = '2px 10px'
+        compLabel.style.backgroundColor = '#e71d36'
         userSelectedEl.classList.remove('red-glow')
         compSelectedEl.classList.remove('green-glow')
     }, 300)
