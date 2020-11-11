@@ -43,14 +43,14 @@ header h1 {
 #user-label {
     position: absolute;
     top: 40px;
-    left: -24px;
+    left: -30px;
     transition: all 0.3s ease;
 }
 
 #comp-label {
     position: absolute;
     top: 40px;
-    right: -24px;
+    right: -40px;
     transition: all 0.3s ease;
 }
 

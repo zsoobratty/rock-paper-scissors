@@ -63,7 +63,17 @@ const drawGame = (userChoice) => {
     const userSelectedEl = document.getElementById(userChoice)
     resultEl.innerHTML = `You both picked ${convertToWord(userChoice)}. It's a tie!`
     userSelectedEl.classList.add('grey-glow')
+
+    compLabel.style.padding = '4px 20px'
+    compLabel.style.backgroundColor = '#464647'
+
+    userLabel.style.padding = '4px 20px'
+    userLabel.style.backgroundColor = '#464647'
     setTimeout(() => {
+        userLabel.style.padding = '2px 10px'
+        userLabel.style.backgroundColor = '#e71d36'
+        compLabel.style.padding = '2px 10px'
+        compLabel.style.backgroundColor = '#e71d36'
         userSelectedEl.classList.remove('grey-glow')
     }, 300);
 }
